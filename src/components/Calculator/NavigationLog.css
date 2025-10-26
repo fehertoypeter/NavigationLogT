@@ -56,7 +56,7 @@
   box-sizing: border-box;
   border: none; /* Nincs körvonal (border) */
   outline: none; /* Nincs fókusz körvonal */
-  font-size: 0.8rem;
+  font-size: 1rem;
   font-weight: 600;
 }
 .four-grid {
@@ -76,9 +76,16 @@
 .right-column {
   display: flex;
   flex-direction: column;
-  width: 50%;
+
   background: white;
   font-size: 0.8rem;
+}
+.left-column {
+  width: 45%;
+}
+
+.right-column {
+  width: 55%;
 }
 
 .row {
