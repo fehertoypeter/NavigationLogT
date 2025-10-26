@@ -1,0 +1,232 @@
+.navigation-log {
+  font-family: Arial, sans-serif;
+  max-width: 100%;
+
+  margin: 0 auto;
+  padding: 20px;
+  border: 1px solid #ccc;
+}
+
+.header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.title h1 {
+  font-size: 24px;
+}
+
+.logo img {
+  height: 50px;
+}
+.table-container {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-between;
+}
+
+.table-container > div {
+  display: flex;
+  align-items: center;
+  flex: 1 1 30%;
+
+  padding: 5px;
+  background-color: #8080802e;
+}
+
+.table-container p {
+  margin: 0;
+  padding: 0;
+  width: auto; /* A szöveg szélességét ne korlátozd */
+  white-space: nowrap; /* Megakadályozza a szöveg sortörését */
+  margin-right: 10px; /* A szöveg és az input közötti távolság */
+}
+
+.table-container input {
+  width: 100%; /* Az input mező kitölti az összes elérhető helyet */
+  padding: 8px;
+  box-sizing: border-box;
+}
+.table-container input {
+  width: 100%; /* Az input mező kitölti az összes elérhető helyet */
+  padding: 8px;
+  box-sizing: border-box;
+  border: none; /* Nincs körvonal (border) */
+  outline: none; /* Nincs fókusz körvonal */
+  background-color: #8080802e;
+}
+.main-container {
+  display: flex;
+  width: 100%;
+}
+
+.left-column,
+.right-column {
+  display: flex;
+  flex-direction: column;
+  width: 50%;
+}
+
+.row {
+  display: flex;
+  justify-content: space-between;
+  height: 40px; /* Sor magassága, kivéve az első sor a jobboldali oszlopban */
+}
+
+.cell {
+  flex: 1;
+  padding: 5px;
+  text-align: center;
+  border: 1px solid #ddd; /* A cellák körvonalai */
+}
+
+.right-column .row:first-child {
+  height: 60px; /* Jobboldali oszlop első sorának magassága */
+}
+
+.left-column .row:first-child,
+.right-column .row:first-child {
+  font-weight: bold; /* Az első sor kiemelése */
+}
+
+.left-column .cell,
+.right-column .cell {
+  padding: 5px;
+}
+
+/* Új sor a baloldali oszlop végén */
+.left-column .last-row {
+  height: 20px; /* Az új sor magassága */
+}
+
+/* Első és második oszlop fekete színű */
+.left-column .cell:nth-child(1),
+.left-column .cell:nth-child(2) {
+  color: black; /* Első és második oszlop fekete színű szövege */
+}
+.block-container {
+  width: 100%;
+}
+
+.row {
+  display: flex;
+  justify-content: space-between;
+  height: 40px; /* Sor magassága */
+}
+
+.cell {
+  flex: 1;
+  padding: 5px;
+  text-align: center;
+  border: 1px solid #ddd; /* A cellák körvonalai */
+}
+
+.row:first-child .cell {
+  font-weight: bold; /* Az első sor kiemelése */
+}
+
+.row .cell:nth-child(5) {
+  font-weight: bold; /* Az 5. oszlop kiemelése (trip, cont. 5%, stb.) */
+}
+
+.block-container .row:nth-child(2),
+.block-container .row:nth-child(3),
+.block-container .row:nth-child(4),
+.block-container .row:nth-child(5),
+.block-container .row:nth-child(6),
+.block-container .row:nth-child(7),
+.block-container .row:nth-child(8) {
+  height: 40px; /* Sor magassága a következő soroknál */
+}
+
+/* Alapértelmezett színek, ha szükséges */
+.block-container .cell {
+  background-color: #f9f9f9;
+}
+
+.block-container .cell:nth-child(5) {
+  background-color: #f0f0f0; /* 5. oszlop kiemelése */
+}
+.custom-final-block {
+  display: flex;
+  width: 100%;
+}
+
+.custom-left-column {
+  width: 75%;
+
+  display: flex;
+  flex-direction: column;
+}
+
+.custom-right-column {
+  width: 25%;
+
+  display: flex;
+  flex-direction: column;
+}
+
+.custom-row {
+  display: flex;
+  justify-content: space-between;
+  height: 40px; /* Alapértelmezett sor magasság */
+}
+
+.custom-row.custom-full-width {
+  width: 100%; /* 100%-os szélesség */
+  justify-content: center;
+}
+
+.custom-cell {
+  flex: 1;
+  padding: 5px;
+  text-align: center;
+  border: 1px solid #ddd;
+}
+
+.custom-row:nth-child(1) .custom-cell {
+  font-weight: bold; /* Az első sor kiemelése */
+}
+
+.custom-row:nth-child(2) .custom-cell {
+  font-weight: bold; /* A második sor is kiemelve */
+}
+
+.custom-left-column .custom-row {
+  height: 40px; /* Az oszlopok magassága a következő sorokban */
+}
+
+.custom-left-column .custom-row.custom-full-width {
+  height: 40px; /* A 100%-os szélességű sor magassága */
+}
+
+.custom-right-column .custom-row {
+  height: fit-content;
+  padding: 0px;
+}
+
+/* A baloldali oszlop oszlopainak szélességei */
+.custom-left-column .custom-row:nth-child(2) .custom-cell:nth-child(1) {
+  width: 10%;
+}
+.custom-left-column .custom-row:nth-child(2) .custom-cell:nth-child(2) {
+  width: 10%;
+}
+.custom-left-column .custom-row:nth-child(2) .custom-cell:nth-child(3) {
+  width: 10%;
+}
+.custom-left-column .custom-row:nth-child(2) .custom-cell:nth-child(4) {
+  width: 23%;
+}
+.custom-left-column .custom-row:nth-child(2) .custom-cell:nth-child(5) {
+  width: 23%;
+}
+.custom-left-column .custom-row:nth-child(2) .custom-cell:nth-child(6) {
+  width: 24%;
+}
+img.wind-correction-img {
+  /* width: 100%; */
+  height: 100%;
+  padding: 20px;
+}

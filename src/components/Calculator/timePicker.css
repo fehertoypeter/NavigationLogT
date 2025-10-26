@@ -1,0 +1,249 @@
+.timepicker-overlay {
+  position: fixed;
+  inset: 0;
+  background: rgba(0, 0, 0, 0.5);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  z-index: 1200;
+  -webkit-backdrop-filter: blur(2px);
+  backdrop-filter: blur(2px);
+  animation: tpFade 0.18s ease;
+}
+
+.timepicker-container {
+  background: #ffffff;
+  border-radius: 14px;
+  padding: 20px;
+  width: 320px;
+  max-width: 90%;
+  box-shadow: 0 8px 30px rgba(0, 0, 0, 0.25);
+  text-align: center;
+}
+
+.timepicker-display {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 18px;
+  margin-bottom: 18px;
+}
+
+.time-column {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.tp-arrow {
+  background: #f8f8f8;
+  border: 1px solid #e6e6e6;
+  width: 42px;
+  height: 38px;
+  border-radius: 8px;
+  cursor: pointer;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  color: #333;
+  font-size: 18px;
+  padding: 20px 47px !important;
+}
+
+.tp-arrow:hover {
+  background: #f6f9ff;
+  border-color: #d6e4ff;
+}
+
+.tp-value {
+  font-size: 4em;
+  font-weight: 700;
+  min-width: 56px;
+  text-align: center;
+  padding: 4px 6px;
+  border-radius: 6px;
+  border: 1px solid transparent;
+  background: #fff;
+}
+
+.colon {
+  font-size: 28px;
+  font-weight: 700;
+  color: #333;
+}
+
+/* small label under value */
+.tp-label {
+  font-size: 12px;
+  color: #666;
+  margin-top: 4px;
+}
+
+/* Modal overlay */
+.tp-overlay {
+  position: fixed;
+  inset: 0;
+  background: rgba(0, 0, 0, 0.45);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  z-index: 1200;
+  -webkit-backdrop-filter: blur(2px);
+  backdrop-filter: blur(2px);
+  animation: tpFade 0.18s ease;
+  font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto,
+    "Helvetica Neue", Arial;
+}
+
+/* Modal box */
+.tp-modal {
+  background: #fff;
+  width: 620px;
+  max-width: calc(100% - 32px);
+  border-radius: 10px;
+  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.25);
+  overflow: hidden;
+}
+
+/* Header */
+.tp-header {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 12px 16px;
+  border-bottom: 1px solid #eee;
+  background: linear-gradient(180deg, #fafafa, #fff);
+}
+.tp-header h3 {
+  margin: 0;
+  font-size: 1.7em;
+  font-weight: 600;
+  color: #222;
+}
+.tp-close {
+  background: transparent;
+  border: 0;
+  font-size: 20px;
+  line-height: 1;
+  padding: 6px;
+  cursor: pointer;
+  color: #666;
+  border-radius: 6px;
+}
+.tp-close:hover {
+  background: rgba(0, 0, 0, 0.04);
+  color: #111;
+}
+
+/* Body - spinner style */
+.tp-body {
+  padding: 18px 20px;
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+  align-items: center;
+}
+
+/* Actions */
+.tp-actions {
+  display: flex;
+  gap: 8px;
+  padding: 12px 16px 18px;
+  justify-content: flex-end;
+  border-top: 1px solid #f1f1f1;
+  background: #fff;
+}
+
+.tp-btn {
+  padding: 8px 12px;
+  font-size: 14px;
+  border-radius: 8px;
+  border: 1px solid transparent;
+  cursor: pointer;
+  min-width: 92px;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.tp-save {
+  background: linear-gradient(90deg, #2b8cff, #1e65d6);
+  color: #fff;
+  box-shadow: 0 6px 14px rgba(30, 100, 220, 0.18);
+  border-color: rgba(0, 0, 0, 0.04);
+}
+.tp-save:hover {
+  filter: brightness(0.98);
+}
+
+.tp-delete {
+  background: #e53935;
+  color: #fff;
+  border-color: rgba(0, 0, 0, 0.04);
+}
+.tp-delete:disabled {
+  opacity: 0.45;
+  cursor: not-allowed;
+  background: #f3a9a6;
+  border-color: rgba(0, 0, 0, 0.02);
+}
+
+.tp-cancel {
+  background: transparent;
+  color: #333;
+  border: 1px solid #e6e6e6;
+}
+.tp-cancel:hover {
+  background: #fafafa;
+}
+
+/* small-screen adjustments */
+@media (max-width: 480px) {
+  .tp-modal {
+    width: 92%;
+  }
+  .timepicker-display {
+    gap: 12px;
+  }
+  .tp-value {
+    font-size: 22px;
+    min-width: 46px;
+  }
+  .tp-arrow {
+    width: 38px;
+    height: 34px;
+  }
+  .tp-actions {
+    flex-direction: column-reverse;
+    gap: 10px;
+    align-items: stretch;
+  }
+  .tp-btn {
+    width: 100%;
+    min-width: unset;
+  }
+}
+
+/* Fade animation */
+@keyframes tpFade {
+  from {
+    opacity: 0;
+    transform: translateY(6px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+/* normalizáljuk a modal alap fontméretét, így az em-ek kiszámíthatók */
+.tp-modal,
+.timepicker-container,
+.waypoint-picker-container {
+  font-size: 16px; /* tetszőleges alap: 16px ajánlott */
+}
+
+/* ezután a 1.7em pontosan ~27.2px lesz */
+.tp-header h3 {
+  font-size: 1.7em;
+}

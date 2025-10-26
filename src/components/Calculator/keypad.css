@@ -1,0 +1,146 @@
+.keypad-overlay {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100vw;
+  height: 100vh;
+  background: rgba(0, 0, 0, 0.5);
+  backdrop-filter: blur(5px);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  z-index: 1000;
+  animation: fadeIn 0.3s ease-in-out;
+}
+
+.keypad-container {
+  background: rgba(255, 255, 255, 0.95);
+  border-radius: 20px;
+  padding: 20px;
+  box-shadow: 0 10px 25px rgba(0, 0, 0, 0.2);
+  width: 90%;
+}
+
+.keypad-input-display {
+  background: #f8f9fa;
+  border-radius: 10px;
+  padding: 15px;
+  margin-bottom: 20px;
+  font-size: 2.5rem;
+  min-height: 30px;
+  text-align: center;
+  border: 2px solid #e9ecef;
+  font-weight: 600;
+}
+
+.keypad-grid {
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+}
+
+.keypad-row {
+  display: flex;
+  justify-content: center;
+  gap: 10px;
+}
+
+.keypad-key {
+  width: 70px;
+  height: 70px;
+  border: none;
+  border-radius: 10px;
+  background: #ffffff;
+  box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+  font-size: 1.5rem;
+  cursor: pointer;
+  transition: all 0.2s ease;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.keypad-key:hover {
+  background: #f0f0f0;
+  transform: translateY(-2px);
+}
+
+.keypad-key:active {
+  transform: translateY(0);
+}
+
+.keypad-key-wide {
+  width: 200px;
+}
+
+@keyframes fadeIn {
+  from {
+    opacity: 0;
+  }
+  to {
+    opacity: 1;
+  }
+}
+
+/* Add or modify the following styles for the waypoint picker */
+
+.tp-overlay {
+  width: 100vw; /* Set width to 90% of the viewport width */
+  max-width: 100vw; /* Ensure it doesn't exceed 90% */
+  margin: auto; /* Center the overlay */
+}
+
+.timepicker-container {
+  font-size: 2rem; /* Increase font size for better readability */
+}
+
+.tp-header h3 {
+  font-size: 2rem; /* Increase header font size */
+}
+
+.tp-modal button {
+  font-size: 1.5rem; /* Increase button font size */
+  padding: 12px; /* Add padding for larger clickable area */
+}
+
+/* Additional styles for aesthetics */
+.tp-modal {
+  border-radius: 8px; /* Rounded corners */
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2); /* Subtle shadow */
+  background-color: white; /* Background color */
+}
+
+/* Modify the waypoint picker styles */
+.tp-overlay {
+  width: 100vw; /* Full width of the viewport */
+  max-width: 100vw; /* Ensure it doesn't exceed 100% */
+  margin: auto; /* Center the overlay */
+}
+
+.timepicker-container {
+  font-size: 2rem; /* Increase font size for better readability */
+}
+
+.tp-header h3 {
+  font-size: 2rem; /* Increase header font size */
+}
+
+.tp-modal {
+  width: 600px; /* Set width to 600px for the waypoint picker */
+  border-radius: 8px; /* Rounded corners */
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2); /* Subtle shadow */
+  background-color: white; /* Background color */
+}
+
+/* Adjust button styles for the waypoint picker */
+.tp-modal button {
+  font-size: 1.5rem; /* Increase button font size */
+  padding: 12px; /* Add padding for larger clickable area */
+}
+
+/* Additional styles for aesthetics */
+.tp-modal {
+  border-radius: 8px; /* Rounded corners */
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2); /* Subtle shadow */
+  background-color: white; /* Background color */
+}

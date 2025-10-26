@@ -1,0 +1,217 @@
+/* === Root and body === */
+html,
+body {
+  margin: 0;
+  padding: 0;
+  background-color: #111827; /* Tailwind bg-gray-900 */
+  height: 100%;
+  width: 100%;
+  overflow-x: hidden; /* nincs vízszintes scroll */
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  font-family: monospace;
+}
+
+/* === Layout wrapper === */
+.calc-container {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: flex-start;
+  background-color: transparent;
+  gap: 20px;
+  width: 480px; /* fix szélesség */
+  max-width: 480px;
+  margin: 0 auto;
+}
+
+/* === Calculator screen === */
+.calc-screen {
+  width: 480px;
+  height: 480px;
+  background-color: #000;
+  color: #fff;
+  border: 1px solid #d1d5db;
+  border-radius: 8px;
+  margin-bottom: 10px;
+  padding: 16px;
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-end;
+  align-items: flex-end;
+  overflow: hidden;
+  font-size: 1.5rem;
+  box-shadow: 0 4px 15px rgba(0, 0, 0, 0.6);
+  box-sizing: border-box;
+}
+
+/* === Display lines === */
+.line {
+  position: relative;
+  width: 100%;
+  text-align: right;
+  white-space: nowrap;
+  overflow: hidden;
+}
+
+.line-content {
+  display: inline-flex;
+  justify-content: flex-end;
+  width: 100%;
+  position: relative;
+}
+
+/* === Blinking cursor === */
+.cursor {
+  position: absolute;
+  border-left: 2px solid white;
+  height: 1em;
+  top: 0;
+}
+
+@keyframes blink {
+  0%,
+  100% {
+    opacity: 1;
+  }
+  50% {
+    opacity: 0;
+  }
+}
+.animate-blink {
+  animation: blink 1s step-start infinite;
+}
+
+/* === Secret menu / Search mode === */
+.secret-menu {
+  width: 100%;
+  height: 100%;
+  text-align: left;
+  font-size: 1rem;
+  display: flex;
+  flex-direction: column;
+}
+
+.menu-item {
+  padding: 8px 12px;
+  border-bottom: 1px solid #4b5563;
+  transition: background 0.2s ease, color 0.2s ease;
+}
+
+.menu-item.selected {
+  background-color: #fff;
+  color: #000;
+}
+
+/* === Search results === */
+.search-area {
+  display: flex;
+  flex-direction: column;
+  overflow-y: hidden;
+  height: 100%;
+}
+
+.search-bar {
+  border: 1px solid #6b7280;
+  padding: 4px;
+  background: #1f2937;
+  margin-bottom: 4px;
+  position: sticky;
+  top: 0;
+}
+
+.search-input {
+  width: 100%;
+  padding: 6px 0px;
+  font-size: 0.9rem;
+  border-radius: 4px;
+  border: none;
+  outline: none;
+}
+
+.results {
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+  transition: all 0.2s ease;
+}
+
+.result-item {
+  border: 1px solid #4b5563;
+  padding: 8px;
+  border-radius: 6px;
+  background: #1f2937;
+}
+
+.result-q {
+  font-weight: bold;
+  font-size: 0.75rem;
+}
+
+.result-a {
+  color: #4ade80;
+  font-size: 0.75rem;
+}
+
+/* === Buttons grid === */
+.button-grid {
+  display: grid;
+  grid-template-columns: repeat(6, 1fr);
+  grid-gap: 10px;
+  background-color: #1f2937; /* Tailwind bg-gray-800 */
+  padding: 12px;
+  border-radius: 10px;
+  width: 480px;
+  max-width: 480px;
+  box-shadow: inset 0 0 4px rgba(255, 255, 255, 0.05);
+  box-sizing: border-box;
+}
+
+/* === Individual buttons === */
+.btn {
+  background-color: #374151; /* Tailwind bg-gray-700 */
+  color: white;
+  padding: 18px;
+  border-radius: 8px;
+  font-size: 1.2rem;
+  font-weight: bold;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  border: none;
+  cursor: pointer;
+  width: 100%;
+  height: 68px;
+  transition: all 0.1s ease-in-out;
+  box-sizing: border-box;
+}
+
+.btn:hover {
+  background-color: #4b5563; /* bg-gray-600 */
+  transform: translateY(-2px);
+}
+
+.btn:active {
+  background-color: #6b7280; /* bg-gray-500 */
+  transform: translateY(0);
+}
+
+/* === Scrollbar === */
+::-webkit-scrollbar {
+  width: 6px;
+}
+::-webkit-scrollbar-thumb {
+  background-color: #4b5563;
+  border-radius: 4px;
+}
+::-webkit-scrollbar-track {
+  background: transparent;
+}
+
+/* === Responsive adjustment (optional) === */
+@media (max-width: 520px) {
+  .calc-container {
+    transform: scale(0.9);
+  }
+}
