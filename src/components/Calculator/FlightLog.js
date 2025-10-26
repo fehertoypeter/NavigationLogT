@@ -338,9 +338,9 @@ const NavigationLog = () => {
       <div className="main-container">
         <div className="left-column">
           <div className="row">
-            <div className="cell">Waypoint Name</div>
-            <div className="cell">ETO</div>
-            <div className="cell">ATO</div>
+            <div className="cell header-text">Waypoint Name</div>
+            <div className="cell header-text">ETO</div>
+            <div className="cell header-text">ATO</div>
           </div>
 
           {/* Render 13 ATO rows dynamically (0..12) */}
@@ -367,13 +367,13 @@ const NavigationLog = () => {
 
         <div className="right-column">
           <div className="row">
-            <div className="cell">Leg Time</div>
-            <div className="cell">Dist. (nm)</div>
-            <div className="cell">Mag. HDG</div>
-            <div className="cell">W/V</div>
-            <div className="cell">Mag. Track</div>
-            <div className="cell">Alt</div>
-            <div className="cell">MSA</div>
+            <div className="cell header-text">Leg Time</div>
+            <div className="cell header-text">Dist. (nm)</div>
+            <div className="cell header-text">Mag. HDG</div>
+            <div className="cell header-text">W/V</div>
+            <div className="cell header-text">Mag. Track</div>
+            <div className="cell header-text">Alt</div>
+            <div className="cell header-text">MSA</div>
           </div>
 
           {/* Render 13 rows for right column */}
