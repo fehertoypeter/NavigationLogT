@@ -594,7 +594,7 @@ const NavigationLog = () => {
                         background: "transparent",
                         cursor: "pointer",
                         borderRadius: 6,
-                        fontSize: "1.5rem",
+                        fontSize: "1rem",
                       }}
                     >
                       {wp}
@@ -620,14 +620,14 @@ const NavigationLog = () => {
                   alignItems: "center",
                   gap: 8,
                   padding: "10px 16px",
-                  fontSize: "1.05rem",
+                  fontSize: "0.8rem",
                   borderRadius: 8,
                   border: "1px solid #ddd",
                   background: "#fafafa",
                   cursor: "pointer",
                 }}
               >
-                <span style={{ fontSize: "1.4rem", lineHeight: 1 }}>+</span> Add
+                <span style={{ fontSize: "1rem", lineHeight: 1 }}>+</span> Add
                 another
               </button>
             </div>
