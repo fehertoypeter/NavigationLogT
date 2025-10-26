@@ -307,7 +307,7 @@ const NavigationLog = () => {
           />
         </div>
         <div className="">
-          <p>COFF-Block:</p>
+          <p>OFF-Block:</p>
           <input
             type="text"
             readOnly
@@ -594,7 +594,7 @@ const NavigationLog = () => {
                         background: "transparent",
                         cursor: "pointer",
                         borderRadius: 6,
-                        fontSize: "1rem",
+                        fontSize: "0.8rem",
                       }}
                     >
                       {wp}
@@ -627,7 +627,7 @@ const NavigationLog = () => {
                   cursor: "pointer",
                 }}
               >
-                <span style={{ fontSize: "1rem", lineHeight: 1 }}>+</span> Add
+                <span style={{ fontSize: "0.8rem", lineHeight: 1 }}>+</span> Add
                 another
               </button>
             </div>
