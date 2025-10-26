@@ -1,5 +1,5 @@
 .navigation-log {
-  font-family: Arial, sans-serif;
+  font-family: "B612", sans-serif;
   max-width: 100%;
   background-color: #eaf4fe;
   margin: 0 auto;
@@ -45,6 +45,9 @@
   width: auto; /* A szöveg szélességét ne korlátozd */
   white-space: nowrap; /* Megakadályozza a szöveg sortörését */
   margin-right: 10px; /* A szöveg és az input közötti távolság */
+  font-size: 1rem;
+  font-weight: 600;
+  color: #000000bf;
 }
 
 .table-container input {
@@ -53,6 +56,8 @@
   box-sizing: border-box;
   border: none; /* Nincs körvonal (border) */
   outline: none; /* Nincs fókusz körvonal */
+  font-size: 1rem;
+  font-weight: 600;
 }
 .four-grid {
   display: grid;
@@ -86,6 +91,9 @@
   padding: 5px;
   text-align: center;
   border: 1px solid #ddd; /* A cellák körvonalai */
+}
+.right-column {
+  border-left: 1px black solid;
 }
 
 .right-column .row:first-child {
@@ -121,6 +129,7 @@
   display: flex;
   justify-content: space-between;
   height: 40px; /* Sor magassága */
+  font-weight: 600;
 }
 
 .cell {
@@ -168,7 +177,6 @@
 
 .custom-left-column {
   width: 75%;
-
   display: flex;
   flex-direction: column;
 }
@@ -197,7 +205,17 @@
   text-align: center;
   border: 1px solid #ddd;
 }
+.left-column .row .cell:nth-child(1) {
+  flex: 0 0 46%;
+}
 
+.left-column .row .cell:nth-child(2) {
+  flex: 0 0 24%;
+}
+
+.left-column .row .cell:nth-child(3) {
+  flex: 0 0 24%;
+}
 .custom-row:nth-child(1) .custom-cell {
   font-weight: bold; /* Az első sor kiemelése */
 }

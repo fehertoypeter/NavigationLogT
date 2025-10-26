@@ -345,7 +345,7 @@ const NavigationLog = () => {
 
           {/* Render 13 ATO rows dynamically (0..12) */}
           {[...Array(13)].map((_, idx) => (
-            <div className={`row ${idx === 12 ? "last-row" : ""}`} key={idx}>
+            <div className={`row ${idx === 13 ? "last-row" : ""}`} key={idx}>
               <div
                 className="cell"
                 style={{ cursor: "pointer" }}
