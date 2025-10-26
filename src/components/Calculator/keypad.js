@@ -74,12 +74,14 @@ const Keypad = ({ isVisible, onClose, onSubmit, initialValue = "" }) => {
           <div className="keypad-row">
             <button
               className="keypad-key keypad-key-wide"
+              data-action="backspace"
               onClick={handleBackspace}
             >
               ⌫
             </button>
             <button
               className="keypad-key keypad-key-wide tp-save"
+              data-action="enter"
               onClick={handleSubmit}
             >
               Enter

@@ -18,7 +18,7 @@
   border-radius: 20px;
   padding: 20px;
   box-shadow: 0 10px 25px rgba(0, 0, 0, 0.2);
-  width: 90%;
+  width: 90%; /* Changed to 90% from 95% */
   display: flex;
   flex-direction: column;
   width: 95%; /* Ensure it takes full width */
@@ -40,47 +40,69 @@
   display: flex;
   flex-direction: column;
   gap: 10px;
+  width: 100%;
 }
 
 .keypad-row {
   display: flex;
-  justify-content: space-between; /* Distribute buttons evenly */
-  gap: 10px;
-  width: 100%; /* Ensure rows take full width */
+  justify-content: center;
+  gap: 5px;
+  width: 100%;
+  padding: 0 10px;
+}
+
+/* Az első sor 11 egyenlő oszlopot definiál (1-9,0,-) */
+.keypad-row:nth-child(1) {
+  grid-template-columns: repeat(11, 1fr);
+}
+
+/* A többi sor ugyanolyan széles oszlopokat használ mint az első */
+.keypad-row:nth-child(2),
+.keypad-row:nth-child(3),
+.keypad-row:nth-child(4) {
+  grid-template-columns: repeat(11, 1fr);
 }
 
 .keypad-key {
-  flex: 1; /* Allow buttons to grow equally */
-  margin: 5px; /* Add some margin between buttons */
-  padding: 15px; /* Adjust padding for better touch targets */
-  width: 70px;
-  height: 70px;
-  border: none;
-  border-radius: 10px;
-  background: #ffffff;
-  box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
-  font-size: 1.5rem; /* Adjust font size for readability */
-  cursor: pointer; /* Pointer cursor on hover */
-  transition: all 0.2s ease;
+  flex: 0 0 auto; /* Don't grow or shrink, stay fixed size */
+  width: 8vw;
+  height: 8vw;
   display: flex;
   align-items: center;
   justify-content: center;
-  text-align: center; /* Center text in buttons */
-  border: 1px solid #ccc; /* Add border for visibility */
-  border-radius: 5px; /* Rounded corners */
-  background-color: #f0f0f0; /* Background color */
+  font-size: 1.2rem;
+  color: #000000;
+  background: #ffffff;
+  border: 1px solid #ccc;
+  border-radius: 8px;
+  cursor: pointer;
+  -webkit-text-fill-color: #000000;
+  user-select: none;
 }
 
-.keypad-key:hover {
-  background-color: #e0e0e0; /* Change background on hover */
+/* Last row with action buttons */
+.keypad-row:last-child {
+  justify-content: center;
+  gap: 10px;
 }
 
-.keypad-key:active {
-  background-color: #d0d0d0; /* Change background on active */
-}
-
-.keypad-key-wide {
-  width: 200px;
+.keypad-key[data-action="enter"],
+.keypad-key[data-action="backspace"] {
+  flex: 0 0 auto;
+  width: 120px; /* Fixed width for action buttons */
+  height: 50px;
+  background: #2196f3;
+  color: white;
+  border: none;
+  font-size: 1.2rem;
+  font-weight: 500;
+  text-transform: uppercase;
+  letter-spacing: 0.5px;
+  border-radius: 8px;
+  box-shadow: 0 2px 8px rgba(33, 150, 243, 0.3);
+  transition: all 0.2s ease;
+  margin: 5px;
+  -webkit-text-fill-color: white;
 }
 
 @keyframes fadeIn {
@@ -155,10 +177,63 @@
   background-color: white; /* Background color */
 }
 
+/* Modern action buttons (Enter & Backspace) */
+.keypad-key[data-action="enter"],
+.keypad-key[data-action="backspace"] {
+  aspect-ratio: unset;
+  flex: 2;
+  background: #2196f3;
+  color: white;
+  border: none;
+  font-size: 1.2rem;
+  font-weight: 500;
+  text-transform: uppercase;
+  letter-spacing: 0.5px;
+  border-radius: 8px;
+  box-shadow: 0 2px 8px rgba(33, 150, 243, 0.3);
+  transition: all 0.2s ease;
+  height: 60px;
+  margin: 5px;
+  -webkit-text-fill-color: white;
+}
+
+.keypad-key[data-action="enter"]:hover,
+.keypad-key[data-action="backspace"]:hover {
+  background: #1976d2;
+  box-shadow: 0 4px 12px rgba(33, 150, 243, 0.4);
+  transform: translateY(-1px);
+  color: white;
+}
+
+.keypad-key[data-action="enter"]:active,
+.keypad-key[data-action="backspace"]:active {
+  background: #1565c0;
+  transform: translateY(1px);
+  box-shadow: 0 2px 4px rgba(33, 150, 243, 0.2);
+  color: white;
+}
+
+/* iOS specific fixes for action buttons */
+@supports (-webkit-touch-callout: none) {
+  .keypad-key[data-action="enter"],
+  .keypad-key[data-action="backspace"] {
+    color: white !important;
+    -webkit-text-fill-color: white !important;
+  }
+}
+
 /* Responsive adjustments */
 @media (max-width: 600px) {
   .keypad-key {
     padding: 10px; /* Reduce padding on smaller screens */
     font-size: 1rem; /* Adjust font size for smaller screens */
+  }
+}
+
+/* iOS specific fixes */
+@supports (-webkit-touch-callout: none) {
+  .keypad-key {
+    color: #000000 !important;
+    -webkit-text-fill-color: #000000 !important;
   }
 }
