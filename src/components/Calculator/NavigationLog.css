@@ -218,11 +218,11 @@
 }
 
 .left-column .row .cell:nth-child(2) {
-  flex: 0 0 24%;
+  flex: 0 0 22%;
 }
 
 .left-column .row .cell:nth-child(3) {
-  flex: 0 0 24%;
+  flex: 0 0 22%;
 }
 .custom-row:nth-child(1) .custom-cell {
   font-weight: bold; /* Az első sor kiemelése */
