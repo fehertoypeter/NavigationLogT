@@ -1,7 +1,7 @@
 .navigation-log {
   font-family: Arial, sans-serif;
   max-width: 100%;
-
+  background-color: #eaf4fe;
   margin: 0 auto;
   padding: 20px;
   border: 1px solid #ccc;
@@ -24,15 +24,19 @@
   display: flex;
   flex-wrap: wrap;
   justify-content: space-between;
+  background-color: #dce7f6;
+  border-radius: 10px;
+  margin-bottom: 10px;
 }
 
 .table-container > div {
   display: flex;
   align-items: center;
   flex: 1 1 30%;
-
   padding: 5px;
-  background-color: #8080802e;
+  background-color: white;
+  border-radius: 10px;
+  margin: 5px;
 }
 
 .table-container p {
@@ -45,20 +49,22 @@
 
 .table-container input {
   width: 100%; /* Az input mező kitölti az összes elérhető helyet */
-  padding: 8px;
-  box-sizing: border-box;
-}
-.table-container input {
-  width: 100%; /* Az input mező kitölti az összes elérhető helyet */
-  padding: 8px;
+  padding: 5px;
   box-sizing: border-box;
   border: none; /* Nincs körvonal (border) */
   outline: none; /* Nincs fókusz körvonal */
-  background-color: #8080802e;
+}
+.four-grid {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 12px;
+  width: 100%;
 }
 .main-container {
   display: flex;
   width: 100%;
+
+  padding-bottom: 10px;
 }
 
 .left-column,
@@ -66,6 +72,7 @@
   display: flex;
   flex-direction: column;
   width: 50%;
+  background: white;
 }
 
 .row {
@@ -107,6 +114,7 @@
 }
 .block-container {
   width: 100%;
+  margin-bottom: 10px;
 }
 
 .row {
@@ -154,6 +162,8 @@
 .custom-final-block {
   display: flex;
   width: 100%;
+  background: white;
+  margin-bottom: 40px;
 }
 
 .custom-left-column {
