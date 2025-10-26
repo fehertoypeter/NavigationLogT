@@ -116,10 +116,13 @@
 }
 
 .cell {
-  flex: 1;
+  flex: 1 1;
   padding: 5px;
   text-align: center;
-  border: 1px solid #ddd; /* A cellák körvonalai */
+  border: 1px solid #ddd;
+  display: flex;
+  align-items: center;
+  justify-content: center;
 }
 
 .row:first-child .cell {

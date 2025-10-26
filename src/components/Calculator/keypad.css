@@ -19,6 +19,9 @@
   padding: 20px;
   box-shadow: 0 10px 25px rgba(0, 0, 0, 0.2);
   width: 90%;
+  display: flex;
+  flex-direction: column;
+  width: 95%; /* Ensure it takes full width */
 }
 
 .keypad-input-display {
@@ -41,32 +44,39 @@
 
 .keypad-row {
   display: flex;
-  justify-content: center;
+  justify-content: space-between; /* Distribute buttons evenly */
   gap: 10px;
+  width: 100%; /* Ensure rows take full width */
 }
 
 .keypad-key {
+  flex: 1; /* Allow buttons to grow equally */
+  margin: 5px; /* Add some margin between buttons */
+  padding: 15px; /* Adjust padding for better touch targets */
   width: 70px;
   height: 70px;
   border: none;
   border-radius: 10px;
   background: #ffffff;
   box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
-  font-size: 1.5rem;
-  cursor: pointer;
+  font-size: 1.5rem; /* Adjust font size for readability */
+  cursor: pointer; /* Pointer cursor on hover */
   transition: all 0.2s ease;
   display: flex;
   align-items: center;
   justify-content: center;
+  text-align: center; /* Center text in buttons */
+  border: 1px solid #ccc; /* Add border for visibility */
+  border-radius: 5px; /* Rounded corners */
+  background-color: #f0f0f0; /* Background color */
 }
 
 .keypad-key:hover {
-  background: #f0f0f0;
-  transform: translateY(-2px);
+  background-color: #e0e0e0; /* Change background on hover */
 }
 
 .keypad-key:active {
-  transform: translateY(0);
+  background-color: #d0d0d0; /* Change background on active */
 }
 
 .keypad-key-wide {
@@ -143,4 +153,12 @@
   border-radius: 8px; /* Rounded corners */
   box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2); /* Subtle shadow */
   background-color: white; /* Background color */
+}
+
+/* Responsive adjustments */
+@media (max-width: 600px) {
+  .keypad-key {
+    padding: 10px; /* Reduce padding on smaller screens */
+    font-size: 1rem; /* Adjust font size for smaller screens */
+  }
 }
